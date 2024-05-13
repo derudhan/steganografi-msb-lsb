@@ -1,0 +1,20 @@
+<div class="container">
+	<!-- Header -->
+	<div class="header text-center">
+		<h3 class="text-muted" (click)="router.navigate(['/image'])">
+			Steganografi MSB & LSB
+		</h3>
+	</div>
+	<nav aria-label="breadcrumb">
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a [class.active]="router.url == '/upload'" href="upload">Upload</a>
+			</li>
+			<li class="breadcrumb-item" [hidden]="!imageService.rgba">
+				<a [class.active]="router.url == '/image'" href="javascript:void(0)" (click)="router.navigate(['/image'])">Uploaded Image</a>
+			</li>
+		</ul>
+	</nav>
+
+	<router-outlet></router-outlet>
+</div>
